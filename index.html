@@ -36,7 +36,7 @@
 				<p>Incorporaciones al estandar</p>
 			</header>
 			<p>
-				Con el surgimiento de html5 se agregaron nuevas caracteristicas e implementaron nuevas etiquetas, entre los elementos que se incorporaron se encuentran herramientas estadisticas, la posibilidad de reproducir contenido multimedia de forma nativa y ademas se agrego la capacidad de poder realizar distintos tipos de graficos dentro del documento (vectoriales y mapa de bits).
+				Con el surgimiento de html5 se agregaron nuevas caracteristicas e implementaron nuevas etiquetas, entre los elementos que se incorporaron se encuentran herramientas estadisticas, la posibilidad de reproducir contenido multimedia de forma nativa y ademas se agrego la capacidad de poder realizar distintos tipos de graficos dentro del documento (vectoriales y mapa de bits). Si bien en la actualidad la mayoria de los navegadores soporta estos elementos, podemos corrobar si los mismos son compatible desde el sitio <a href="https://caniuse.com" target="_blank">Can I Use</a>
 			</p>
 			<article>
 				<h3>Estadisticas</h3>
@@ -86,6 +86,34 @@
 						</ul>
 					</li>
 				</ul>
+			</article>
+			<article>
+				<h3>API's de Dibujo</h3>
+				<p>
+					Los navegadores actuales permiten la implementacion de etiquetas como <strong>&lt;svg></strong> (scalable vector graphics) que permite la realizacion de graficos vectoriales, es decir, imagenes compuestas de lineas y curvas que se calculan matematicamente; la ventaja de las mismas es que no se ven afectadas por los cambios de tamaño o resolucion y utilizan <em>XML</em> como lenguaje. 
+				</p>
+				<p>
+					Por otro lado <strong>&lt;canvas></strong> (Lienzo) permite la creacion de graficos raster (mapa de bits) o imagenes pixelares dentro de nuestro documento utilizando como lenguaje <em>JavaScript</em> permitiendonos realizar interacciones con el usuario, gracias a las caracteristicas del mismo.
+				</p>
+				<div class="example">
+					<svg width="300" height="300">
+						<rect 
+							x="50" y="50" 
+							width="100" height="100"
+							fill="#448" />
+						<circle 
+							r="50" cx="150" cy="150" 
+							fill="rgba(204,51,51,.5)" />
+						<polygon 
+							points="150,50 150,150 250,100" 
+							fill="hsla(120, 50%, 50%, .5)" />
+						<text style="font: bold 1rem calibri, sans-serif;"
+							x="50" y="250" fill="none" stroke="#333">
+							SVG (Graficos Vectoriales)
+						</text>
+					</svg>
+					<canvas id="canvas" width="300" height="300"></canvas>
+				</div>
 			</article>
 		</section>
 	</main>
