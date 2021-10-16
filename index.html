@@ -65,9 +65,24 @@
 					<li>
 						<strong>Meter</strong>
 						<ul>
-							<li><span></span></li>
-							<li><span></span></li>
-							<li><span></span></li>
+							<li>
+								<meter value="30" low="40" high="70" optimum="90" max="100"></meter>
+								<span>
+									<strong>value</strong> < low < high < optimum
+								</span>
+							</li>
+							<li>
+								<meter value="60" low="40" high="70" optimum="90" max="100"></meter>
+								<span>
+									low < <strong>value</strong> < high < optimum
+								</span>
+							</li>
+							<li>
+								<meter value="90" low="40" high="70" optimum="90" max="100"></meter>
+								<span>
+									low < high < <strong>value</strong> < optimum
+								</span>
+							</li>
 						</ul>
 					</li>
 				</ul>
