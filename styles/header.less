@@ -3,22 +3,46 @@
 @secondary: #c36;
 
 //	Nesting: Anidacion de estilos;
-nav{
-	background: linear-gradient(to right, @secondary, @primary);
-	.menu{
-		&:extend(.unstyled);
-		a{
+	nav{
+		.flexbox(@fj:space-between);
+		.normalize(-.5rem -.5rem 0; @p:.5rem);
+		background: linear-gradient(to right, @secondary, @primary);
+		.menu{
 			&:extend(.unstyled);
-			color: #eee;
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+			&.active{ max-height: 640px; }
+			// menu pantallas medianas (Tablets)
+			@media screen and (min-width: 768px){
+				.flexbox;
+				width: auto;
+				max-height: 640px;
+			}
+			a{
+				&:extend(.unstyled);
+				color: #eee;
+			}
 		}
 	}
-}
 
 //	Mixins: Selectores que se usan como atributos;
-.unstyled{
-	margin: 0;
-	border: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-}
+	.unstyled{
+		.normalize;
+		list-style: none;
+		text-decoration: none;
+	}
+
+//	Mixins Parametricos: Estilos que reciben parametros;
+	.normalize(@m:0; @b:0; @p:0){
+		margin: @m;
+		border: @b;
+		padding: @p;
+	}
+	.flexbox(@fd: row; @fj: center; @fa: center; @fw: wrap; @f: flex){
+		display: @f;
+		flex-direction: @fd;
+		justify-content: @fj;
+		align-items: @fa;
+		flex-wrap: @fw;
+	}

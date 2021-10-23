@@ -1,8 +1,13 @@
 /* Declaraciones */
 	const d = document
+	const menuBtn = d.querySelector('nav .btn')
+	const menuLst = d.querySelector('nav .menu')
 	const pBar = d.querySelector('.bar progress')
 	const pIn = d.querySelector('.bar input')
 	const ctx = d.querySelector('#canvas').getContext('2d')
+
+/* Navigation Bar */
+	menuBtn.onclick = () => menuLst.classList.toggle('active')
 
 /* Progress Bar */
 	pIn.oninput = () => pBar.value = pIn.value

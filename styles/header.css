@@ -1,5 +1,32 @@
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -0.5rem -0.5rem 0;
+  border: 0;
+  padding: 0.5rem;
   background: linear-gradient(to right, #c36, #448);
+}
+nav .menu {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+}
+nav .menu.active {
+  max-height: 640px;
+}
+@media screen and (min-width: 768px) {
+  nav .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    max-height: 640px;
+  }
 }
 nav .menu a {
   color: #eee;
