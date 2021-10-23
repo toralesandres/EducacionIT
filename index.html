@@ -8,6 +8,7 @@
 			initial-scale=1,
 			maximum-scale=3">
 	<title>Maquetado Avanzado</title>
+	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 	<!-- Navegacion: Links mas importantes -->
@@ -114,6 +115,24 @@
 					</svg>
 					<canvas id="canvas" width="300" height="300"></canvas>
 				</div>
+			</article>
+		</section>
+		<section>
+			<header class="header">
+				<h2>Preprocesadores</h2>
+				<p>Pseudolenguajes de CSS</p>
+			</header>
+			<p>
+				Son herramientas que permiten generar hojas de estilos a partir de una sintasis particular, utilizan algun lenguaje de programacion como herramienta de compilacion para realizar dicha tarea. Estos programas poseen las mismas caracteristicas que el lenguaje CSS, pero agregan alguna funcionalidades que el mismo no posee, ademas que su sintaxis suele ser mas corta en comparacion de la hoja de estilos resultante.
+			</p>
+			<article>
+				<h3>LESS (Leaner Style Sheets)</h3>
+				<p>
+					Preprocesador que utiliza Javascript como lenguaje de compilacion, ademas brinda a las hojas de estilos algunas caracteristicas del mismo como la asincronicidad e invocacion de metodos. Para instalarlo como aplicacion, debemos ingresar en la consola el comando de nodejs <em>npm i -g less</em> y para compilar las hojas de estilos deberemos ingresar el comando <em>lessc "input.less" "output.css"</em>
+				</p>
+				<p>
+					El unico inconveniente que se nos presenta a la hora de trabajar con LESS es que este no posee un metodo de observacion, es decir, que debemos compilar nuestros archivos cada vez que realicemos cambios. Una solucion a esto es utilizar un plugin conocido como Less-Watch-Compiler que lo instalamos utilizando el comando <em>npm i -g less-watch-compiler</em> y para compilar nuestros archivos ingresamos el comando <em>less-watch-compiler "input/" "output/ "file.less"</em>
+				</p>
 			</article>
 		</section>
 	</main>

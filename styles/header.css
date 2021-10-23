@@ -1,0 +1,15 @@
+nav {
+  background: linear-gradient(to right, #c36, #448);
+}
+nav .menu a {
+  color: #eee;
+}
+.unstyled,
+nav .menu,
+nav .menu a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}

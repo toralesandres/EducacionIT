@@ -1,0 +1,24 @@
+//	Variables: Valores que se almacenan y pueden variar;
+@primary: #448;
+@secondary: #c36;
+
+//	Nesting: Anidacion de estilos;
+nav{
+	background: linear-gradient(to right, @secondary, @primary);
+	.menu{
+		&:extend(.unstyled);
+		a{
+			&:extend(.unstyled);
+			color: #eee;
+		}
+	}
+}
+
+//	Mixins: Selectores que se usan como atributos;
+.unstyled{
+	margin: 0;
+	border: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
