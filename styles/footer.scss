@@ -16,11 +16,20 @@
 		dark 		#333,
 		danger 		#c33,
 		warning 	#ea3,
-		success 	#3c6;
+		success 	#3c6,
+		none 		transparent;
 	$attributes:
 		bg 		background-color,
 		text 	color,
 		border 	border-color;
+	$col: 24;
+	$media:
+	// 	name 	device 	max-width
+		sm 		576px 	540px,
+		md 		768px 	720px,
+		lg 		992px 	960px,
+		xl 		1200px 	1140px,
+		xxl 	1400px 	1320px;
 // Mixins
 	@mixin normalize($m: 0, $p: 0, $b: 0){
 		margin: $m;
@@ -33,8 +42,16 @@
 	}
 	@each $prop, $attr in $attributes{
 		@each $cn, $cv in $colors{
-			.#{$prop}-#{$cn}{ #{$attr}:$cv; }
+			.#{$prop}-#{$cn}{ #{$attr}:$cv !important; }
 	}	}
+	@for $i from 1 through $col{
+		.col-#{$i}{ width: percentage($i / $col) }
+	}
+	@each $vname, $vwidth, $vmax in $media{
+	@media screen and (min-width: $vwidth){
+		.container, .container-#{$vname}{ max-width: $vmax; }
+		@for $i from 1 through $col{ .col-#{$vname}-#{$i}{ width: percentage($i / $col)}
+	}	}	}
 //	Styles
 	.icon{
 		min-width: 4rem;
@@ -53,12 +70,67 @@
 	}
 // Nesting
 	#footer{
-		@include normalize(0 -.5rem -.5rem, 1rem);
+		@include normalize(0 -.5rem -.5rem, 5rem 1rem 1rem);
+		position: relative;
+		background: linear-gradient(#4485, #c365);
 		#contact{
-			@extend .text-light, .bg-primary;
+			@include normalize(1rem auto, 1rem);
+			@extend .container-md, .col-md-18, .col-xl-12, .text-light, .bg-primary;
+			display: grid;
+			label{
+				@include normalize(.5rem 0 0);
+				max-height: 0;
+				overflow: hidden;
+				@media screen and (min-width: 768px){
+					max-height: 300px;
+				}
+			}
+			input,
+			textarea,
+			select{
+				@include normalize(0, .5rem 1rem, .12rem solid transparent);
+				@extend .col-24;
+				outline: none;
+				&:focus{ @extend .border-dark;
+					& + .valid{ 
+						@include normalize($p:.5rem);
+						max-height: 300px; } }
+				&:valid{ @extend .border-success;
+					& + .valid{ @extend .bg-success; } }
+				&:not(:placeholder-shown):invalid{ @extend .border-danger;	
+					& + .valid{ @extend .bg-danger}
+				}
+			}
+			.valid{
+				max-height: 0;
+				overflow: hidden;
+				@extend .bg-dark;
+			}
+			button{
+				@include normalize(.2rem 0 .5rem auto, .5rem 1rem, .1rem solid);
+				@extend .icon, .bg-none, .text-light, .border-light;
+				min-height: 2rem;
+				&:hover{ @extend .text-primary, .bg-light; }
+			}
 		}
 		.map{
-
+			iframe{
+				@include normalize;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+			.icon{
+				position: absolute;
+				top: .5rem;
+				right: .5rem;
+				font-size: 2.5rem;
+				&.icon-max::before{ content: '+';}
+				&.icon-min::before{ content: '-';}
+			}
 		}
 		.social{
 			display: flex;
