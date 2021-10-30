@@ -1,3 +1,31 @@
+.facebook {
+  background-image: url("../assets/icon/facebook.svg");
+}
+
+.github {
+  background-image: url("../assets/icon/github.svg");
+}
+
+.instagram {
+  background-image: url("../assets/icon/instagram.svg");
+}
+
+.linkedin {
+  background-image: url("../assets/icon/linkedin.svg");
+}
+
+.twitter {
+  background-image: url("../assets/icon/twitter.svg");
+}
+
+.youtube {
+  background-image: url("../assets/icon/youtube.svg");
+}
+
+.whatsapp {
+  background-image: url("../assets/icon/whatsapp.svg");
+}
+
 #footer {
   margin: 0 -0.5rem -0.5rem;
   border: 0;

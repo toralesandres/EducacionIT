@@ -1,10 +1,15 @@
 // Variables
-
+	$path: '../assets/icon';
+	$social: 'facebook','github','instagram','linkedin','twitter','youtube','whatsapp';
 // Mixins
 	@mixin normalize($m: 0, $p: 0, $b: 0){
 		margin: $m;
 		border: $b;
 		padding: $p;
+	}
+// 	Loops
+	@each $ico in $social{
+		.#{$ico}{ background-image: url('#{$path}/#{$ico}.svg'); }
 	}
 // Nesting
 	#footer{
