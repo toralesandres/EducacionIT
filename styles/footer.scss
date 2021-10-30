@@ -1,0 +1,12 @@
+// Variables
+
+// Mixins
+	@mixin normalize($m: 0, $p: 0, $b: 0){
+		margin: $m;
+		border: $b;
+		padding: $p;
+	}
+// Nesting
+	#footer{
+		@include normalize(0 -.5rem -.5rem, 1rem);
+	}
