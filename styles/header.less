@@ -7,6 +7,27 @@
 		.flexbox(@fj:space-between);
 		.normalize(-.5rem -.5rem 0; @p:.5rem);
 		background: linear-gradient(to right, @secondary, @primary);
+		a{
+			display: block;
+			.normalize(@p:.5rem);
+			color: #eee;
+			text-decoration: none;
+			&:hover{
+				text-shadow: 0 0 .5rem #eee;
+			}
+		}
+		button{
+			border: .1rem solid #eee;
+			color: #eee;
+			background-color: transparent;
+			&:hover{
+				color: #c36;
+				background-color: #eee;
+			}
+			@media screen and (min-width: 768px){
+				display: none;
+			}
+		}
 		.menu{
 			&:extend(.unstyled);
 			width: 100%;
@@ -19,13 +40,8 @@
 				width: auto;
 				max-height: 640px;
 			}
-			a{
-				&:extend(.unstyled);
-				color: #eee;
-			}
 		}
 	}
-
 //	Mixins: Selectores que se usan como atributos;
 	.unstyled{
 		.normalize;

@@ -9,6 +9,31 @@ nav {
   padding: 0.5rem;
   background: linear-gradient(to right, #c36, #448);
 }
+nav a {
+  display: block;
+  margin: 0;
+  border: 0;
+  padding: 0.5rem;
+  color: #eee;
+  text-decoration: none;
+}
+nav a:hover {
+  text-shadow: 0 0 0.5rem #eee;
+}
+nav button {
+  border: 0.1rem solid #eee;
+  color: #eee;
+  background-color: transparent;
+}
+nav button:hover {
+  color: #c36;
+  background-color: #eee;
+}
+@media screen and (min-width: 768px) {
+  nav button {
+    display: none;
+  }
+}
 nav .menu {
   width: 100%;
   max-height: 0;
@@ -28,12 +53,8 @@ nav .menu.active {
     max-height: 640px;
   }
 }
-nav .menu a {
-  color: #eee;
-}
 .unstyled,
-nav .menu,
-nav .menu a {
+nav .menu {
   margin: 0;
   border: 0;
   padding: 0;
