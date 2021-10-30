@@ -6,6 +6,9 @@
 	nav{
 		.flexbox(@fj:space-between);
 		.normalize(-.5rem -.5rem 0; @p:.5rem);
+		position: sticky;
+		top:0;
+		z-index: 2;
 		background: linear-gradient(to right, @secondary, @primary);
 		a{
 			display: block;
@@ -39,6 +42,20 @@
 				.flexbox;
 				width: auto;
 				max-height: 640px;
+			}
+		}
+	}
+	#header{
+		.normalize(0 -.5rem; @p:1rem);
+		.flexbox(column);
+		height: min(100vh, 640px); // vh: viewport height;
+		color: #eee;
+		background-color: @primary;
+		font-size: calc(2vw + .5rem); // vw: viewport width
+		.header{
+			h1, p{
+				&:extend(.unstyled);
+				text-shadow: 0 0 2vw #333;
 			}
 		}
 	}
