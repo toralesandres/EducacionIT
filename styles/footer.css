@@ -26,10 +26,127 @@
   background-image: url("../assets/icon/whatsapp.svg");
 }
 
+.bg-primary, #footer #contact {
+  background-color: #448;
+}
+
+.bg-secondary {
+  background-color: #c36;
+}
+
+.bg-info {
+  background-color: #36c;
+}
+
+.bg-light {
+  background-color: #eee;
+}
+
+.bg-dark {
+  background-color: #333;
+}
+
+.bg-danger {
+  background-color: #c33;
+}
+
+.bg-warning {
+  background-color: #ea3;
+}
+
+.bg-success {
+  background-color: #3c6;
+}
+
+.text-primary {
+  color: #448;
+}
+
+.text-secondary {
+  color: #c36;
+}
+
+.text-info {
+  color: #36c;
+}
+
+.text-light, #footer #contact {
+  color: #eee;
+}
+
+.text-dark {
+  color: #333;
+}
+
+.text-danger {
+  color: #c33;
+}
+
+.text-warning {
+  color: #ea3;
+}
+
+.text-success {
+  color: #3c6;
+}
+
+.border-primary {
+  border-color: #448;
+}
+
+.border-secondary {
+  border-color: #c36;
+}
+
+.border-info {
+  border-color: #36c;
+}
+
+.border-light {
+  border-color: #eee;
+}
+
+.border-dark {
+  border-color: #333;
+}
+
+.border-danger {
+  border-color: #c33;
+}
+
+.border-warning {
+  border-color: #ea3;
+}
+
+.border-success {
+  border-color: #3c6;
+}
+
+.icon, #footer .social a {
+  min-width: 4rem;
+  min-height: 4rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #ccc;
+  background-size: 2.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.icon:hover, #footer .social a:hover {
+  background-size: 3rem;
+  background-color: #eee;
+  box-shadow: 0 0 0.5rem #333;
+}
+
 #footer {
   margin: 0 -0.5rem -0.5rem;
   border: 0;
   padding: 1rem;
+}
+#footer .social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=footer.css.map */
