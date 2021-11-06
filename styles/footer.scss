@@ -54,16 +54,17 @@
 	}	}	}
 //	Styles
 	.icon{
-		min-width: 4rem;
-		min-height: 4rem;
+		min-width: 3.5rem;
+		min-height: 3.5rem;
 		margin: .25rem;
 		border-radius: .25rem;
 		background-color: #ccc;
 		background-size: 2.5rem;
 		background-position: center;
 		background-repeat: no-repeat;
+		transition: all .5s ease-in-out;
 		&:hover{
-			background-size: 3rem;
+			background-size: 2.5rem;
 			background-color: #eee;
 			box-shadow: 0 0 .5rem #333;
 		}
@@ -96,6 +97,7 @@
 				@include normalize(0, .5rem 1rem, .12rem solid transparent);
 				@extend .col-24;
 				outline: none;
+				transition: all .5s ease-in;
 				&:focus{ @extend .border-dark;
 					& + .valid{ 
 						@include normalize($p:.5rem);
@@ -103,12 +105,13 @@
 				&:valid{ @extend .border-success;
 					& + .valid{ @extend .bg-success; } }
 				&:not(:placeholder-shown):invalid{ @extend .border-danger;	
-					& + .valid{ @extend .bg-danger}
+					& + .valid{ @extend .bg-danger;}
 				}
 			}
 			.valid{
 				max-height: 0;
 				overflow: hidden;
+				transition: all .5s ease-in;
 				@extend .bg-dark;
 			}
 			button{
@@ -143,9 +146,25 @@
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
-			a{ @extend .icon; }
+			a{ 
+				@extend .icon; 
+				&:hover{
+				transform:
+					translateY(-.5rem)
+					rotate(360deg);
+				}
+			}
 		}
 		.copy{
-
+			@include normalize(1rem -1rem, 1rem);
+			@extend .text-light, .bg-dark;
+			text-align: center;
+			transition: all 1s ease-out;
+			opacity: .5;
+			&:hover{
+				@extend .bg-primary;
+				text-shadow: 0 0 .5rem;
+				opacity: .8;
+			}
 		}
 	}

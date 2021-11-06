@@ -29,6 +29,7 @@
 /*Examples*/
 	.example{
 		display: flex;
+		justify-content: space-around;
 		flex-wrap: wrap;
 		gap: 1rem;
 		position: relative;
@@ -37,6 +38,7 @@
 		background-color: #eee;
 		box-shadow: -.5rem .5rem .5rem #999; /*-x+ -y+ blur color*/
 		list-style: none;
+		overflow: hidden;
 	}
 	.example::before{
 		content: '';
@@ -49,12 +51,17 @@
 	}
 /*Transformaciones*/
 	.transform{
-
+		perspective: 3rem;
+		perspective-origin: top center;
 	}
 	.transform div{
 		border: .1rem solid #ccc;
 		padding: 1rem;
 		background-color: #c36;
+		transition-property: transform;
+		transition-duration: 1s;
+		transition-timing-function: ease;
+		transition-delay: .5s;
 	}
 	/*2d - x y*/
 	.transform :nth-child(1){ transform: translate(.5rem, -.5rem)} /*distancia x,y */
@@ -63,6 +70,14 @@
 	.transform :nth-child(4){ transform: skewX(30deg);} /*grados*/
 	.transform :nth-child(5){ transform: skewY(-30deg);} /*grados*/
 	/*3d - z*/
-	.transform :nth-child(6){ transform: }
-	.transform :nth-child(7){ transform: }
-	.transform :nth-child(8){ transform: }
+	.transform :nth-child(6){ transform: translateZ(.5rem)} /*distancia z*/
+	.transform :nth-child(7){ transform: rotateX(15deg)} /*grados eje x*/
+	.transform :nth-child(8){ transform: rotateY(15deg)} /*grados eje y*/
+	.transform :nth-child(9){ 
+		transform: 
+			rotate(30deg) 
+			scale(1.2)
+			translateZ(.5rem);
+	}
+	/*Transiciones*/
+	.transform:hover div{ transform: translate(.5rem, -.5rem);}

@@ -36,12 +36,31 @@
 			width: 100%;
 			max-height: 0;
 			overflow: hidden;
+			transition: all .5s ease-in;
 			&.active{ max-height: 640px; }
 			// menu pantallas medianas (Tablets)
 			@media screen and (min-width: 768px){
 				.flexbox;
 				width: auto;
 				max-height: 640px;
+			}
+			li{
+				position: relative;
+				&::before{
+					content:'';
+					position:absolute;
+					bottom:0;
+					left:0;
+					width:.15rem;
+					height: .15rem;
+					background: linear-gradient(to right, #0000, #eee);
+					opacity: 0;
+					transition: all 1s ease-out; /*property duration timing delay*/
+				}
+				&:hover::before{
+					width:100%;
+					opacity: .9;
+				}
 			}
 		}
 	}
