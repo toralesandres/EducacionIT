@@ -26,3 +26,20 @@
 		font-size: 1.2rem;
 	}
 	main h3{ border-bottom: .1rem solid #666; }
+/*Examples*/
+	.example{
+		position: relative;
+		margin: .5rem 2rem;
+		padding: 1rem 1.5rem;
+		background-color: #eee;
+		list-style: none;
+	}
+	.example::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: .25rem;
+		background: linear-gradient(#c36, #448);
+	}
