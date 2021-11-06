@@ -5,6 +5,8 @@
 	const pBar = d.querySelector('.bar progress')
 	const pIn = d.querySelector('.bar input')
 	const ctx = d.querySelector('#canvas').getContext('2d')
+	const mapBtn = d.querySelector('.map .icon')
+	const mapFrm = d.querySelector('.map iframe')
 
 /* Navigation Bar */
 	menuBtn.onclick = () => menuLst.classList.toggle('active')
@@ -30,3 +32,4 @@
 	// Texto
 	ctx.font = 'bold 1rem calibri, sans-serif'
 	ctx.strokeText('Canvas (Mapa de Bits)', 50, 250) // text, x, y
+	mapBtn.onclick = () => mapFrm.classList.toggle('active') ? mapBtn.classList.replace('icon-max','icon-min') : mapBtn.classList.replace('icon-min', 'icon-max')

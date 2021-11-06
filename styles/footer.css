@@ -763,6 +763,12 @@
   box-shadow: 0 0 0.5rem #333;
 }
 
+.fixed, #footer .map .icon.icon-min, #footer .map .social a.icon-min, #footer .social .map a.icon-min, #footer .map #contact button.icon-min, #footer #contact .map button.icon-min, #footer .map iframe.active {
+  position: fixed;
+  z-index: 2;
+  opacity: 0.85;
+}
+
 #footer {
   margin: 0 -0.5rem -0.5rem;
   border: 0;
