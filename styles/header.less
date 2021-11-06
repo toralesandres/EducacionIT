@@ -65,17 +65,42 @@
 		}
 	}
 	#header{
+		position: relative;
 		.normalize(0 -.5rem; @p:1rem);
 		.flexbox(column);
 		height: min(100vh, 640px); // vh: viewport height;
 		color: #eee;
-		background-color: @primary;
 		font-size: calc(2vw + .5rem); // vw: viewport width
 		.header{
 			h1, p{
 				&:extend(.unstyled);
 				text-shadow: 0 0 2vw #333;
 			}
+		}
+		.slide{
+			li{
+				position: absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				opacity: 0;
+				transition: all 1s ease-in;
+				.bg(4);
+				&.active{ opacity: 1; }
+			}
+		}
+		button{
+			.normalize(@p: 1rem);
+			position: absolute;
+			top:0;
+			bottom:0;
+			color: #eee;
+			background-color: transparent;
+			font-size: calc(2vw + 1rem);
+			&.icon-prev{ left:0; }
+			&.icon-next{ right:0; }
 		}
 	}
 //	Mixins: Selectores que se usan como atributos;
@@ -97,4 +122,13 @@
 		justify-content: @fj;
 		align-items: @fa;
 		flex-wrap: @fw;
+	}
+//	Mixins Recursivos: Estilos que se repiten en base a una condicion;
+	.bg(@r; @i:1) when (@i <= @r){ // condicion
+		&:nth-child(@{i}){
+			background: radial-gradient(
+				circle at top left,
+				hsl(@i * 30, 50%, 60%),
+				hsl(@i * 90, 50%, 30%)
+		)	}	.bg(@r; @i + 1); // repeticion
 	}
