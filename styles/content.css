@@ -28,10 +28,14 @@
 	main h3{ border-bottom: .1rem solid #666; }
 /*Examples*/
 	.example{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
 		position: relative;
-		margin: .5rem 2rem;
+		margin: .5rem 2rem 1.5rem; /*top right bottom left*/
 		padding: 1rem 1.5rem;
 		background-color: #eee;
+		box-shadow: -.5rem .5rem .5rem #999; /*-x+ -y+ blur color*/
 		list-style: none;
 	}
 	.example::before{
@@ -43,3 +47,22 @@
 		width: .25rem;
 		background: linear-gradient(#c36, #448);
 	}
+/*Transformaciones*/
+	.transform{
+
+	}
+	.transform div{
+		border: .1rem solid #ccc;
+		padding: 1rem;
+		background-color: #c36;
+	}
+	/*2d - x y*/
+	.transform :nth-child(1){ transform: translate(.5rem, -.5rem)} /*distancia x,y */
+	.transform :nth-child(2){ transform: scale(1.2)} /*unidades x,y*/
+	.transform :nth-child(3){ transform: rotate(15deg); } /*grados*/
+	.transform :nth-child(4){ transform: skewX(30deg);} /*grados*/
+	.transform :nth-child(5){ transform: skewY(-30deg);} /*grados*/
+	/*3d - z*/
+	.transform :nth-child(6){ transform: }
+	.transform :nth-child(7){ transform: }
+	.transform :nth-child(8){ transform: }
