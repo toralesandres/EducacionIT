@@ -180,7 +180,7 @@ nav .menu,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(320px,100%) 1fr));
   min-height: min(100vh, 640px);
-  margin: 0 -1rem;
+  margin: 0 -0.5rem;
   background: url('../assets/bg/bg-less.jpg') center / cover;
   overflow: hidden;
 }
