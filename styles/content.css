@@ -96,6 +96,15 @@
 		position: relative;
 		min-height: 300px;
 		justify-content: flex-start;
+		background: linear-gradient(
+			to right,
+			hsl(0,50%,50%),
+			hsl(90,50%,50%),
+			hsl(180,50%,50%),
+			hsl(270,50%,50%),
+			hsl(0,50%,50%)
+		) left/500%; /*color image position/size repeat*/
+		animation: bg 240s linear infinite;
 	}
 	.around .btn{
 		position: absolute;
@@ -103,9 +112,13 @@
 		bottom: .5rem;
 	}
 	.around div{
+		box-shadow: 0 0 .5rem #eee inset;
 		animation: around 4s linear infinite; /*name duration timing delay direction count*/
-		animation-play-state: paused;
-		
+		animation-play-state: paused;	
+	}
+	.timing div{
+		border-radius: 0 1.25rem 1.25rem 0;
+		box-shadow: -.5rem 0 .5rem #333;
 	}
 	.translate div{
 		animation-name: translate;
@@ -114,12 +127,17 @@
 		animation-iteration-count: infinite;
 		animation-fill-mode: backwards;
 	}
+	.loading div{
+		width: 5rem;
+		height: 5rem;
+		border-radius: 50%;
+		border: .5rem solid;
+		border-color: #acf #48f #36c #248;
+		box-shadow: 0 0 .5rem #124;
+		animation: loading 1s .5s infinite;
+	}
 	/*Timing Function*/
-		.timing div{
-			border-radius: 0 1.25rem 1.25rem 0;
-			box-shadow: -.5rem 0 .5rem #333;
-		}
-		.timing :nth-child(1n){ animation-timing-function: ease; }
+				.timing :nth-child(1n){ animation-timing-function: ease; }
 		.timing :nth-child(2n){ animation-timing-function: ease-in; }
 		.timing :nth-child(3n){ animation-timing-function: ease-out; }
 		.timing :nth-child(4n){ animation-timing-function: ease-in-out; }
@@ -166,4 +184,10 @@
 			transform: translate(0,0) skew(15deg,0);
 			background-color: hsl(0,50%,50%);
 		}
+	}
+	@keyframes bg{
+		from{ background-position: -500%; }
+	}
+	@keyframes loading{
+		to{ transform: rotate(360deg); }
 	}
