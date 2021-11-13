@@ -1,0 +1,76 @@
+// variables
+	@path: '../assets/bg';
+	@timing: ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(0,1,1,0);
+	@functions: lineal, cuadratica, trigonometrica, exponencial, limite;
+// nesting
+	.less{
+		&-container{
+			display: grid;
+			grid-template-columns: ~'repeat(auto-fit, minmax(min(320px,100%) 1fr))';
+			min-height: min(100vh, 640px);
+			margin: 0 -1rem;
+			background: url('@{path}/bg-less.jpg') center/cover;
+			overflow: hidden;
+		}
+		&-animation{
+			.timing;
+			display: flex;
+			flex-wrap: wrap;
+			animation: rotate 60s linear infinite;
+			& div{
+				width: 3rem;
+				height: 3rem;
+				margin: .25rem;
+				border-radius: 3rem;
+				box-shadow: .5rem -.5rem .5rem #eee3 inset, 0 0 .5rem #eee8;
+				background-image: radial-gradient(circle at top right, #eee5, #36c5);
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				.animation;
+			}
+		}
+	}
+
+// mixins
+	.timing(@i: 1) when (@i <= length(@timing)){
+		&:nth-child(@{i}n) div{
+			animation-timing-function: extract(@timing, @i);
+			animation-delay: @i * 1.5s;
+		}	.timing(@i + 1);
+	}
+	.animation(@i: 1) when (@i <= length(@functions)){
+		&:nth-child(@{i}n){
+			animation-name: extract(@functions, @i);
+			background-color: hsla(@i * 60, 50%, 50%, .5);
+		}
+		.animation(@i + 1);
+	}
+	@keyframes rotate{
+		to{ transform: rotate(360deg); }
+	}
+	.keys(@i: 1) when (@i <= length(@functions)){
+		@keyframes extract(@functions, @i){
+			.percentages(@p:0%; @f: -50vmin) when (@p <= 100%){
+				@x: @f + 50vmin;
+				@{p}{
+					transform: 
+						if( @i = 1, // lineal (ax + b)
+							translate(@x, (@x / 2vmin) ),
+						if( @i = 2, // cuadratica (ax^2 + bx + c)
+							translate(@x, (pow(@f, 2vmin) / 10) ),
+						if( @i = 3, // trigonometrica sin(x) cos(x)
+							translate(@x, sin(@f) * 50vmin ),
+						if( @i = 4, // exponencial n^x
+							translate(@x, pow(1.2vmin, @f) ),
+						if( @f = 0, // limite n/x (asintotas)
+							translate(@x, 1vmin ),
+							translate(@x, (100vmin/@f) )
+						)	)	)	)	);
+				}
+				.percentages(@p + 5; @f + 5);
+			}	.percentages;
+		}
+		.keys(@i + 1);
+	}
+	/*keyframes bubbles*/
+	.keys;

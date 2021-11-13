@@ -9,7 +9,9 @@
 	const mapFrm = d.querySelector('.map iframe')
 	const animBtn = d.querySelector('.around .btn')
 	const animDiv = d.querySelector('.around div')
-
+	const prev = d.querySelector('#header .icon-prev')
+	const next = d.querySelector('#header .icon-next')
+	const slides = d.querySelectorAll('#header .slide li')
 /* Navigation Bar */
 	menuBtn.onclick = () => menuLst.classList.toggle('active')
 /* Progress Bar */
@@ -37,3 +39,20 @@
 	ctx.font = 'bold 1rem calibri, sans-serif'
 	ctx.strokeText('Canvas (Mapa de Bits)', 50, 250) // text, x, y
 	mapBtn.onclick = () => mapFrm.classList.toggle('active') ? mapBtn.classList.replace('icon-max','icon-min') : mapBtn.classList.replace('icon-min', 'icon-max')
+/* Gallery Fade*/
+	/*actions*/
+		prev.onclick = () => getItem(slides)
+		next.onclick = () => getItem(slides, true)
+	/*functions*/
+		const getItem = (array, type = false, className = 'active') => {
+			for(const i of array){
+				if(i.classList.contains(className)){
+					i.classList.remove(className)
+					getNewItem(i, type)
+			}	}	newItem.classList.add(className)
+		}
+		const getNewItem = (el, type) => {
+			newItem =  type ? 
+			(el.nextElementSibling || el.parentNode.firstElementChild ) : 
+			(el.previousElementSibling || el.parentNode.lastElementChild)
+		}

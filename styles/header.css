@@ -12,6 +12,11 @@ nav {
   z-index: 2;
   background: linear-gradient(to right, #c36, #448);
 }
+nav .logo {
+  font: bold 1.5rem sans-serif;
+  text-transform: uppercase;
+  animation: breath 2s ease-in-out alternate infinite;
+}
 nav a {
   display: block;
   margin: 0;
@@ -105,37 +110,37 @@ nav .menu li:hover::before {
   transition: all 1s ease-in;
 }
 #header .slide li:nth-child(1) {
-  background: radial-gradient(circle at top left, hsl(30, 50%, 60%), hsl(90, 50%, 30%));
+  background: radial-gradient(circle at top left, hsl(60, 50%, 60%), hsl(90, 50%, 30%));
 }
 #header .slide li:nth-child(2) {
-  background: radial-gradient(circle at top left, hsl(60, 50%, 60%), hsl(180, 50%, 30%));
+  background: radial-gradient(circle at top left, hsl(120, 50%, 60%), hsl(180, 50%, 30%));
 }
 #header .slide li:nth-child(3) {
-  background: radial-gradient(circle at top left, hsl(90, 50%, 60%), hsl(270, 50%, 30%));
+  background: radial-gradient(circle at top left, hsl(180, 50%, 60%), hsl(270, 50%, 30%));
 }
 #header .slide li:nth-child(4) {
-  background: radial-gradient(circle at top left, hsl(120, 50%, 60%), hsl(0, 50%, 30%));
-}
-#header .slide li:nth-child(5) {
-  background: radial-gradient(circle at top left, hsl(150, 50%, 60%), hsl(90, 50%, 30%));
-}
-#header .slide li:nth-child(6) {
-  background: radial-gradient(circle at top left, hsl(180, 50%, 60%), hsl(180, 50%, 30%));
-}
-#header .slide li:nth-child(7) {
-  background: radial-gradient(circle at top left, hsl(210, 50%, 60%), hsl(270, 50%, 30%));
-}
-#header .slide li:nth-child(8) {
   background: radial-gradient(circle at top left, hsl(240, 50%, 60%), hsl(0, 50%, 30%));
 }
+#header .slide li:nth-child(5) {
+  background: radial-gradient(circle at top left, hsl(300, 50%, 60%), hsl(90, 50%, 30%));
+}
+#header .slide li:nth-child(6) {
+  background: radial-gradient(circle at top left, hsl(0, 50%, 60%), hsl(180, 50%, 30%));
+}
+#header .slide li:nth-child(7) {
+  background: radial-gradient(circle at top left, hsl(60, 50%, 60%), hsl(270, 50%, 30%));
+}
+#header .slide li:nth-child(8) {
+  background: radial-gradient(circle at top left, hsl(120, 50%, 60%), hsl(0, 50%, 30%));
+}
 #header .slide li:nth-child(9) {
-  background: radial-gradient(circle at top left, hsl(270, 50%, 60%), hsl(90, 50%, 30%));
+  background: radial-gradient(circle at top left, hsl(180, 50%, 60%), hsl(90, 50%, 30%));
 }
 #header .slide li:nth-child(10) {
-  background: radial-gradient(circle at top left, hsl(300, 50%, 60%), hsl(180, 50%, 30%));
+  background: radial-gradient(circle at top left, hsl(240, 50%, 60%), hsl(180, 50%, 30%));
 }
 #header .slide li:nth-child(11) {
-  background: radial-gradient(circle at top left, hsl(330, 50%, 60%), hsl(270, 50%, 30%));
+  background: radial-gradient(circle at top left, hsl(300, 50%, 60%), hsl(270, 50%, 30%));
 }
 #header .slide li:nth-child(12) {
   background: radial-gradient(circle at top left, hsl(0, 50%, 60%), hsl(0, 50%, 30%));
@@ -169,4 +174,403 @@ nav .menu,
   padding: 0;
   list-style: none;
   text-decoration: none;
+}
+/*lesscss animations*/
+.less-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px,100%) 1fr));
+  min-height: min(100vh, 640px);
+  margin: 0 -1rem;
+  background: url('../assets/bg/bg-less.jpg') center / cover;
+  overflow: hidden;
+}
+.less-animation {
+  display: flex;
+  flex-wrap: wrap;
+  animation: rotate 60s linear infinite;
+}
+.less-animation:nth-child(1n) div {
+  animation-timing-function: ease;
+  animation-delay: 1.5s;
+}
+.less-animation:nth-child(2n) div {
+  animation-timing-function: ease-in;
+  animation-delay: 3s;
+}
+.less-animation:nth-child(3n) div {
+  animation-timing-function: ease-out;
+  animation-delay: 4.5s;
+}
+.less-animation:nth-child(4n) div {
+  animation-timing-function: ease-in-out;
+  animation-delay: 6s;
+}
+.less-animation:nth-child(5n) div {
+  animation-timing-function: linear;
+  animation-delay: 7.5s;
+}
+.less-animation:nth-child(6n) div {
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  animation-delay: 9s;
+}
+.less-animation div {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.25rem;
+  border-radius: 3rem;
+  box-shadow: 0.5rem -0.5rem 0.5rem #eee3 inset, 0 0 0.5rem #eee8;
+  background-image: radial-gradient(circle at top right, #eee5, #36c5);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.less-animation div:nth-child(1n) {
+  animation-name: lineal;
+  background-color: hsla(60, 50%, 50%, 0.5);
+}
+.less-animation div:nth-child(2n) {
+  animation-name: cuadratica;
+  background-color: hsla(120, 50%, 50%, 0.5);
+}
+.less-animation div:nth-child(3n) {
+  animation-name: trigonometrica;
+  background-color: hsla(180, 50%, 50%, 0.5);
+}
+.less-animation div:nth-child(4n) {
+  animation-name: exponencial;
+  background-color: hsla(240, 50%, 50%, 0.5);
+}
+.less-animation div:nth-child(5n) {
+  animation-name: limite;
+  background-color: hsla(300, 50%, 50%, 0.5);
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*keyframes bubbles*/
+@keyframes lineal {
+  0% {
+    transform: translate(0vmin, 0vmin);
+  }
+  5% {
+    transform: translate(5vmin, 2.5vmin);
+  }
+  10% {
+    transform: translate(10vmin, 5vmin);
+  }
+  15% {
+    transform: translate(15vmin, 7.5vmin);
+  }
+  20% {
+    transform: translate(20vmin, 10vmin);
+  }
+  25% {
+    transform: translate(25vmin, 12.5vmin);
+  }
+  30% {
+    transform: translate(30vmin, 15vmin);
+  }
+  35% {
+    transform: translate(35vmin, 17.5vmin);
+  }
+  40% {
+    transform: translate(40vmin, 20vmin);
+  }
+  45% {
+    transform: translate(45vmin, 22.5vmin);
+  }
+  50% {
+    transform: translate(50vmin, 25vmin);
+  }
+  55% {
+    transform: translate(55vmin, 27.5vmin);
+  }
+  60% {
+    transform: translate(60vmin, 30vmin);
+  }
+  65% {
+    transform: translate(65vmin, 32.5vmin);
+  }
+  70% {
+    transform: translate(70vmin, 35vmin);
+  }
+  75% {
+    transform: translate(75vmin, 37.5vmin);
+  }
+  80% {
+    transform: translate(80vmin, 40vmin);
+  }
+  85% {
+    transform: translate(85vmin, 42.5vmin);
+  }
+  90% {
+    transform: translate(90vmin, 45vmin);
+  }
+  95% {
+    transform: translate(95vmin, 47.5vmin);
+  }
+  100% {
+    transform: translate(100vmin, 50vmin);
+  }
+}
+@keyframes cuadratica {
+  0% {
+    transform: translate(0vmin, 250vmin);
+  }
+  5% {
+    transform: translate(5vmin, 202.5vmin);
+  }
+  10% {
+    transform: translate(10vmin, 160vmin);
+  }
+  15% {
+    transform: translate(15vmin, 122.5vmin);
+  }
+  20% {
+    transform: translate(20vmin, 90vmin);
+  }
+  25% {
+    transform: translate(25vmin, 62.5vmin);
+  }
+  30% {
+    transform: translate(30vmin, 40vmin);
+  }
+  35% {
+    transform: translate(35vmin, 22.5vmin);
+  }
+  40% {
+    transform: translate(40vmin, 10vmin);
+  }
+  45% {
+    transform: translate(45vmin, 2.5vmin);
+  }
+  50% {
+    transform: translate(50vmin, 0vmin);
+  }
+  55% {
+    transform: translate(55vmin, 2.5vmin);
+  }
+  60% {
+    transform: translate(60vmin, 10vmin);
+  }
+  65% {
+    transform: translate(65vmin, 22.5vmin);
+  }
+  70% {
+    transform: translate(70vmin, 40vmin);
+  }
+  75% {
+    transform: translate(75vmin, 62.5vmin);
+  }
+  80% {
+    transform: translate(80vmin, 90vmin);
+  }
+  85% {
+    transform: translate(85vmin, 122.5vmin);
+  }
+  90% {
+    transform: translate(90vmin, 160vmin);
+  }
+  95% {
+    transform: translate(95vmin, 202.5vmin);
+  }
+  100% {
+    transform: translate(100vmin, 250vmin);
+  }
+}
+@keyframes trigonometrica {
+  0% {
+    transform: translate(0vmin, 13.11874269vmin);
+  }
+  5% {
+    transform: translate(5vmin, -42.54517623vmin);
+  }
+  10% {
+    transform: translate(10vmin, -37.25565802vmin);
+  }
+  15% {
+    transform: translate(15vmin, 21.40913347vmin);
+  }
+  20% {
+    transform: translate(20vmin, 49.4015812vmin);
+  }
+  25% {
+    transform: translate(25vmin, 6.6175875vmin);
+  }
+  30% {
+    transform: translate(30vmin, -45.64726254vmin);
+  }
+  35% {
+    transform: translate(35vmin, -32.51439201vmin);
+  }
+  40% {
+    transform: translate(40vmin, 27.20105554vmin);
+  }
+  45% {
+    transform: translate(45vmin, 47.94621373vmin);
+  }
+  50% {
+    transform: translate(50vmin, 0vmin);
+  }
+  55% {
+    transform: translate(55vmin, -47.94621373vmin);
+  }
+  60% {
+    transform: translate(60vmin, -27.20105554vmin);
+  }
+  65% {
+    transform: translate(65vmin, 32.51439201vmin);
+  }
+  70% {
+    transform: translate(70vmin, 45.64726254vmin);
+  }
+  75% {
+    transform: translate(75vmin, -6.6175875vmin);
+  }
+  80% {
+    transform: translate(80vmin, -49.4015812vmin);
+  }
+  85% {
+    transform: translate(85vmin, -21.40913347vmin);
+  }
+  90% {
+    transform: translate(90vmin, 37.25565802vmin);
+  }
+  95% {
+    transform: translate(95vmin, 42.54517623vmin);
+  }
+  100% {
+    transform: translate(100vmin, -13.11874269vmin);
+  }
+}
+@keyframes exponencial {
+  0% {
+    transform: translate(0vmin, 0.00010988vmin);
+  }
+  5% {
+    transform: translate(5vmin, 0.00027343vmin);
+  }
+  10% {
+    transform: translate(10vmin, 0.00068038vmin);
+  }
+  15% {
+    transform: translate(15vmin, 0.001693vmin);
+  }
+  20% {
+    transform: translate(20vmin, 0.00421272vmin);
+  }
+  25% {
+    transform: translate(25vmin, 0.0104826vmin);
+  }
+  30% {
+    transform: translate(30vmin, 0.02608405vmin);
+  }
+  35% {
+    transform: translate(35vmin, 0.06490547vmin);
+  }
+  40% {
+    transform: translate(40vmin, 0.16150558vmin);
+  }
+  45% {
+    transform: translate(45vmin, 0.40187757vmin);
+  }
+  50% {
+    transform: translate(50vmin, 1vmin);
+  }
+  55% {
+    transform: translate(55vmin, 2.48832vmin);
+  }
+  60% {
+    transform: translate(60vmin, 6.19173642vmin);
+  }
+  65% {
+    transform: translate(65vmin, 15.40702157vmin);
+  }
+  70% {
+    transform: translate(70vmin, 38.33759992vmin);
+  }
+  75% {
+    transform: translate(75vmin, 95.39621664vmin);
+  }
+  80% {
+    transform: translate(80vmin, 237.3763138vmin);
+  }
+  85% {
+    transform: translate(85vmin, 590.66822915vmin);
+  }
+  90% {
+    transform: translate(90vmin, 1469.77156797vmin);
+  }
+  95% {
+    transform: translate(95vmin, 3657.26198801vmin);
+  }
+  100% {
+    transform: translate(100vmin, 9100.43815vmin);
+  }
+}
+@keyframes limite {
+  0% {
+    transform: translate(0vmin, -2vmin);
+  }
+  5% {
+    transform: translate(5vmin, -2.22222222vmin);
+  }
+  10% {
+    transform: translate(10vmin, -2.5vmin);
+  }
+  15% {
+    transform: translate(15vmin, -2.85714286vmin);
+  }
+  20% {
+    transform: translate(20vmin, -3.33333333vmin);
+  }
+  25% {
+    transform: translate(25vmin, -4vmin);
+  }
+  30% {
+    transform: translate(30vmin, -5vmin);
+  }
+  35% {
+    transform: translate(35vmin, -6.66666667vmin);
+  }
+  40% {
+    transform: translate(40vmin, -10vmin);
+  }
+  45% {
+    transform: translate(45vmin, -20vmin);
+  }
+  50% {
+    transform: translate(50vmin, 1vmin);
+  }
+  55% {
+    transform: translate(55vmin, 20vmin);
+  }
+  60% {
+    transform: translate(60vmin, 10vmin);
+  }
+  65% {
+    transform: translate(65vmin, 6.66666667vmin);
+  }
+  70% {
+    transform: translate(70vmin, 5vmin);
+  }
+  75% {
+    transform: translate(75vmin, 4vmin);
+  }
+  80% {
+    transform: translate(80vmin, 3.33333333vmin);
+  }
+  85% {
+    transform: translate(85vmin, 2.85714286vmin);
+  }
+  90% {
+    transform: translate(90vmin, 2.5vmin);
+  }
+  95% {
+    transform: translate(95vmin, 2.22222222vmin);
+  }
+  100% {
+    transform: translate(100vmin, 2vmin);
+  }
 }

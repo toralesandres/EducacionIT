@@ -10,6 +10,11 @@
 		top:0;
 		z-index: 2;
 		background: linear-gradient(to right, @secondary, @primary);
+		.logo{
+			font: bold 1.5rem sans-serif;
+			text-transform: uppercase;
+			animation: breath 2s ease-in-out alternate infinite;
+		}
 		a{
 			display: block;
 			.normalize(@p:.5rem);
@@ -128,7 +133,9 @@
 		&:nth-child(@{i}){
 			background: radial-gradient(
 				circle at top left,
-				hsl(@i * 30, 50%, 60%),
+				hsl(@i * 60, 50%, 60%),
 				hsl(@i * 90, 50%, 30%)
 		)	}	.bg(@r; @i + 1); // repeticion
 	}
+/*lesscss animations*/
+@import url('animations.less');
