@@ -7,15 +7,17 @@
 	const ctx = d.querySelector('#canvas').getContext('2d')
 	const mapBtn = d.querySelector('.map .icon')
 	const mapFrm = d.querySelector('.map iframe')
-	const prev = d.querySelector('')
-	const next = d.querySelector('')
+	const animBtn = d.querySelector('.around .btn')
+	const animDiv = d.querySelector('.around div')
 
 /* Navigation Bar */
 	menuBtn.onclick = () => menuLst.classList.toggle('active')
-
 /* Progress Bar */
 	pIn.oninput = () => pBar.value = pIn.value
-
+/* Animation Play*/
+	animBtn.onclick = () => animDiv.style.animationPlayState == 'running' ? 
+		(animDiv.style.animationPlayState = 'paused', animBtn.innerHTML = 'PLAY') : 
+		(animDiv.style.animationPlayState = 'running', animBtn.innerHTML = 'PAUSE') 
 /* Canvas */
 	// Rectangulo
 	ctx.fillStyle = '#448'

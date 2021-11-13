@@ -204,6 +204,24 @@
 					<div>linear</div>
 					<div>cubic-bezier</div>
 				</div>
+				<h4>Direction</h4>
+				<p>	
+					En las animaciones podemos controlar la manera en la que sera reproducida nuestra pelicula, por defecto esto se da <strong>del from{} al to{}</strong>, pero podemos hacer que la misma se ejecute hacia atras utilizando el valor <em>reverse</em> para el atributo <strong>animation-direction</strong>. Tambien podemos ejecutar ambas utilizando valores como <em>alternate</em>, pero es necesario que nuestra animacion se ejecute mas de una vez.
+				</p>
+				<div class="example animation direction translate">
+					<div>normal</div>
+					<div>reverse</div>
+					<div>alternate</div>
+					<div>alternate-reverse</div>
+				</div>
+				<h4>@keyframes Percentages</h4>
+				<p>
+					Si bien las animaciones se ejecutan automaticamente, son bastante similares a las transformaciones con transiciones, ya que agregacion los estados intermedios entre el principio y el fin; pero en caso de necesitar varios estadios intermedios podemos utilizar selectores de porcentajes donde deben estar si o si el <strong>0%{} y 100%{}</strong> para que no existan problemas en la reproduccion.
+				</p>
+				<div class="example animation around">
+					<div></div>
+					<button class="btn">PLAY</button>
+				</div>
 			</article>
 		</section>
 	</main>

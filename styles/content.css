@@ -92,9 +92,22 @@
 		background-color: #333;
 		text-align: center;
 	}
+	.around{
+		position: relative;
+		min-height: 300px;
+		justify-content: flex-start;
+	}
+	.around .btn{
+		position: absolute;
+		right: .5rem;
+		bottom: .5rem;
+	}
+	.around div{
+		animation: around 4s linear infinite; /*name duration timing delay direction count*/
+		animation-play-state: paused;
+		
+	}
 	.translate div{
-		border-radius: 0 1.25rem 1.25rem 0;
-		box-shadow: -.5rem 0 .5rem #333;
 		animation-name: translate;
 		animation-duration: 3s;
 		animation-delay: 1s;
@@ -102,12 +115,25 @@
 		animation-fill-mode: backwards;
 	}
 	/*Timing Function*/
+		.timing div{
+			border-radius: 0 1.25rem 1.25rem 0;
+			box-shadow: -.5rem 0 .5rem #333;
+		}
 		.timing :nth-child(1n){ animation-timing-function: ease; }
 		.timing :nth-child(2n){ animation-timing-function: ease-in; }
 		.timing :nth-child(3n){ animation-timing-function: ease-out; }
 		.timing :nth-child(4n){ animation-timing-function: ease-in-out; }
 		.timing :nth-child(5n){ animation-timing-function: linear; }
 		.timing :nth-child(6n){ animation-timing-function: cubic-bezier(0,1,1,-1); }
+	/*Direction*/
+		.direction div{
+			border-radius: 2rem / .5rem;
+			box-shadow: 0 0 .5rem #333;
+		}
+		.direction :nth-child(1n){ animation-direction: normal; }
+		.direction :nth-child(2n){ animation-direction: reverse; }
+		.direction :nth-child(3n){ animation-direction: alternate; }
+		.direction :nth-child(4n){ animation-direction: alternate-reverse; }
 	/*Keyframes*/
 	@keyframes translate{
 		from{
@@ -117,5 +143,27 @@
 		to{		
 			transform: translateX(min(100vw, 1320px));
 			background-color: #448;
+		}
+	}
+	@keyframes around{
+		0%{
+			transform: translate(0,0) skew(15deg,0);
+			background-color: hsl(0,50%,50%);
+		}
+		25%{
+			transform: translate(50vw,0) skew(0,15deg);
+			background-color: hsl(90,50%,50%);
+		}
+		50%{
+			transform: translate(50vw,200px) skew(-15deg,0);
+			background-color: hsl(180,50%,50%);
+		}
+		75%{
+			transform: translate(0,200px) skew(0,-15deg);
+			background-color: hsl(270,50%,50%);
+		}
+		100%{
+			transform: translate(0,0) skew(15deg,0);
+			background-color: hsl(0,50%,50%);
 		}
 	}
