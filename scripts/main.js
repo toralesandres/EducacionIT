@@ -7,6 +7,8 @@
 	const ctx = d.querySelector('#canvas').getContext('2d')
 	const mapBtn = d.querySelector('.map .icon')
 	const mapFrm = d.querySelector('.map iframe')
+	const prev = d.querySelector('')
+	const next = d.querySelector('')
 
 /* Navigation Bar */
 	menuBtn.onclick = () => menuLst.classList.toggle('active')

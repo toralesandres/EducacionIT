@@ -64,7 +64,7 @@
 		transition-delay: .5s;
 	}
 	/*2d - x y*/
-	.transform :nth-child(1){ transform: translate(.5rem, -.5rem)} /*distancia x,y */
+	.transform :nth-child(1){ transform: translate(-1rem, .25rem)} /*distancia x,y */
 	.transform :nth-child(2){ transform: scale(1.2)} /*unidades x,y*/
 	.transform :nth-child(3){ transform: rotate(15deg); } /*grados*/
 	.transform :nth-child(4){ transform: skewX(30deg);} /*grados*/
@@ -80,4 +80,42 @@
 			translateZ(.5rem);
 	}
 	/*Transiciones*/
-	.transform:hover div{ transform: translate(.5rem, -.5rem);}
+	.transform:hover div{ transform: translate(.25rem, -.25rem);}
+/*Animaciones*/
+	.animation{
+		flex-direction: column;
+	}
+	.animation div{
+		max-width: 10rem;
+		padding: 1rem;
+		color: #eee;
+		background-color: #333;
+		text-align: center;
+	}
+	.translate div{
+		border-radius: 0 1.25rem 1.25rem 0;
+		box-shadow: -.5rem 0 .5rem #333;
+		animation-name: translate;
+		animation-duration: 3s;
+		animation-delay: 1s;
+		animation-iteration-count: infinite;
+		animation-fill-mode: backwards;
+	}
+	/*Timing Function*/
+		.timing :nth-child(1n){ animation-timing-function: ease; }
+		.timing :nth-child(2n){ animation-timing-function: ease-in; }
+		.timing :nth-child(3n){ animation-timing-function: ease-out; }
+		.timing :nth-child(4n){ animation-timing-function: ease-in-out; }
+		.timing :nth-child(5n){ animation-timing-function: linear; }
+		.timing :nth-child(6n){ animation-timing-function: cubic-bezier(0,1,1,-1); }
+	/*Keyframes*/
+	@keyframes translate{
+		from{
+			transform: translateX(-100%);
+			background-color: #c36;
+		}
+		to{		
+			transform: translateX(min(100vw, 1320px));
+			background-color: #448;
+		}
+	}
